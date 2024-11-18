@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <form action="/update" method="post">
+      {% for n in my_list %}
+        <label><b>First Name</label><br>
+        <input type="text" name="first_name" value={{ n[1] }}><br><br>
+        <label><b>Last Name</label><br>
+        <input type="text" name="last_name" value={{ n[2] }}><br><br>
+        <label><b>Age</label><br>
+        <input type="number" name="age" value={{ n[3] }}><br><br>
+        <label><b>Gender</label><br>
+        <select name="gender">
+          <option value={{ n[4] }} selected hidden>{{ n[4] }}</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select><br><br>
+        <label><b>Email</label><br>
+        <input type="email" name="email" value={{ n[5] }}><br><br>
+        <label><b>Faculty</label><br>
+        <select name="faculty">
+          <option value="{{ n[6] }}" selected hidden>{{ n[6] }}</option>
+          <option value="Electrical Engineering">Electrical Engineering</option>
+          <option value="Chemical Engineering">Chemical Engineering</option>
+          <option value="Aerospace Engineering">Aerospace Engineering</option>
+          <option value="Medical Engineering">Medical Engineering</option>
+          <option value="Power Engineering">Power Engineering</option>
+        </select><br><br>
+        <input type="hidden" name="id" value="{{ n[0] }}">
+      {% endfor %}
+      <input type="submit" value="Submit the data">
+    </form><br>
+    <h3>Students Table</h3>
+    <a href="/displayTable">Click here</a>
+    <h3>Main Page</h3>
+    <a href="/">Click here</a>
+  </body>
+</html>

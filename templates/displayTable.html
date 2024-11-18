@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Students Table</title>
+  </head>
+  <body>
+    <h1>Students Table</h1>
+    <table border="1" action="displayTable">
+      <thead>
+        <tr>
+          <td>ID</td>
+          <td>First Name</td>
+          <td>Second Name</td>
+          <td>Age</td>
+          <td>Gender</td>
+          <td>Email</td>
+          <td>Faculty</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for n in my_list %}
+          <tr>
+            <td>{{ n[0] }}</td>
+            <td>{{ n[1] }}</td>
+            <td>{{ n[2] }}</td>
+            <td>{{ n[3] }}</td>
+            <td>{{ n[4] }}</td>
+            <td>{{ n[5] }}</td>
+            <td>{{ n[6] }}</td>
+            <td><a href="/edit/{{ n[0] }}">Edit</td>
+            <td><a href="/delete/{{ n[0] }}">Delete</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table><br>
+    <h3>Registration Form</h3>
+    <a href="/form">Click here</a>
+    <h3>Main Page</h3>
+    <a href="/">Click here</a>
+  </body>
+</html>
