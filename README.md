@@ -28,41 +28,42 @@ cd Mock-University-Website
 Install the necessary Python packages using pip. This project uses Flask 
 and mysql-connector-python for interacting with the MariaDB database
 
-bash
+```bash
 # Update pip to the latest version
 pip install --upgrade pip
 
 # Install dependencies
 pip install flask mysql-connector-python
-
+```
 
 ### 3. Set Up MariaDB Database
 
 Install MariaDB server if it's not already installed and start it:
 
-bash
+```bash
 sudo apt update
 sudo apt install mariadb-server
 
 sudo systemctl start mariadb
-
+```
 
 ### 4. Configure the Database
 
 Log in to MariaDB as the root user and create the studentdb database:
 
-bash
+```bash
 sudo mysql -u root -p
-
+```
 
 Inside the MariaDB shell, run the SQL commands from the [script](db_creation_script.sql), then run the following command and make sure you get the same result as in the picture. 
 
 ![picture](db_tables_config.png).
 
 
-### 6. Running the Application
+### 5. Running the Application
 
 To run the Flask application, execute the following command in the project directory:
 
-bash
+```bash
 python3 index.py
+```
